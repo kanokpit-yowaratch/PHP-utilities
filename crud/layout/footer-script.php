@@ -1,0 +1,9 @@
+<script src="<?php echo HTTP_HOST; ?>/crud/public/js/jquery.min.js"></script>
+<script src="<?php echo HTTP_HOST; ?>/crud/public/js/tether.min.js"></script>
+<script src="<?php echo HTTP_HOST; ?>/crud/public/js/bootstrap.min.js"></script>
+<!-- <script src="<?php // echo HTTP_HOST; ?>/public/js/metisMenu.min.js"></script>
+<script src="<?php // echo HTTP_HOST; ?>/public/js/raphael.min.js"></script>
+<script src="<?php // echo HTTP_HOST; ?>/public/js/morris.min.js"></script>
+<script src="<?php // echo HTTP_HOST; ?>/public/js/sb-admin-2.js"></script>
+<script src="<?php // echo HTTP_HOST; ?>/public/js/toastr.min.js"></script> -->
+<!-- <script src="<?php // echo HTTP_HOST; ?>/public/js/common.js"></script> -->

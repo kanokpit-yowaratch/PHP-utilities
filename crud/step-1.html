@@ -5,23 +5,14 @@
     </a>
   </div>
   <div id="collapseOne" class="accordion-body collapse in">
-    <ul>
+    <ul class="arrow">
       <li>ทำการ install node และ npm ในเครื่องให้เรียบร้อย</li>
-      <li>ในโฟลเดอร์โปรเจค สร้างไฟล์ package.json สำหรับนำเข้า lib ต่างๆ
-        <br>
-        <img src="public/images/01-package.png">
-      </li>
-      <li>ข้างในใส่ {}</li>
-      <li>เปิด cmd และเข้าไปในโปรเจค
-        <br>
-        <img src="public/images/02-cmd.png">
-      </li>
+      <li>ในโฟลเดอร์โปรเจค สร้างไฟล์ package.json สำหรับนำเข้า lib ต่างๆ</li>
+      <li>ข้างในไฟล์ package.json ใส่ {}</li>
+      <li>เปิด cmd และเข้าไปในโปรเจค</li>
       <li>lib ตัวแรกที่จะนำเข้ามาคือ bootstrap ให้เข้าไปที่ website ของ bootstrap เพื่อรัน npm install ตัวล่าสุด
       </li>
-      <li>รันตัวล่าสุด (ซึ่งตอนนี้คือ bootstrap@4.0.0-alpha.6) npm install bootstrap@4.0.0-alpha.6 --save
-        <br>
-        <img src="public/images/03-cmd-npm-i-bt.png">
-      </li>
+      <li>รันตัวล่าสุด (ซึ่งตอนนี้คือ bootstrap@4.0.0-alpha.6) <span class="font-weight-bold">npm install bootstrap@4.0.0-alpha.6 --save</span></li>
       <li>ในไฟล์ package.json ระบบจะเพิ่ม dependencies ของ bootstrap มาให้ ส่วนใน node_modules เพิ่ม jquery ที่เข้ากับ bootstrap
         version นั้นเข้ามาให้ด้วย
         <br>
@@ -29,17 +20,22 @@
         <br>
         <img src="public/images/05-bootstrap-jquery.png">
       </li>
-      <li>copy bootstrap และ jquery จาก node_modules มาใช้ในโปรเจค
-        <br>
+      <li>การเรียกใช้งาน libs ที่นำเข้ามา สามารถอ้างอิง path จาก node_modules หรือจะ copy ไฟล์ เข้ามาใช้ในโปรเจคก็ได้
+        <!-- <br>
         <img src="public/images/06-css.png">
         <br>
-        <img src="public/images/07-js.png">
+        <img src="public/images/07-js.png"> -->
       </li>
-      <li>ลำดับการ include ของ css และ js
-        <br>
-        <img src="public/images/08-link-css.png">
+      <li>ลำดับการ include js version ปัจจุบัน (08/2018)
+        <!-- <br>
+        <img src="public/images/08-link-css.png"> -->
         <br>
         <img src="public/images/09-src-js.png">
+      </li>
+      <li>นำเข้า libs อื่นๆ ที่จำเป็น ได้แก่
+        <ul>
+          <li>font-awesome: <span class="font-weight-bold">npm i font-awesome --save</span></li>
+        </ul>
       </li>
     </ul>
   </div>
