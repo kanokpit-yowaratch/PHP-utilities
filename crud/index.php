@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>PHP Easy CRUD</title>
-	<link href="public/css/bootstrap.min.css" rel="stylesheet">
-	<link href="public/css/custom.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="public/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="public/css/custom.css">
 	<link rel="shortcut icon" type="image/png" href="public/images/favicon.png" />
 </head>
 
@@ -17,10 +18,12 @@
 			<div class="row">
 				<div class="col-lg-12 content">
 					<h4>ทำ CRUD ง่ายๆ สไตล์ PHP</h4>
-					<div class="accordion" id="accordion2">
+					<a href="customers" class="btn btn-success">Demo&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+					<div class="accordion">
 						<?php include('step-1.html'); ?>
 						<?php include('step-2.html'); ?>
 						<?php include('step-3.html'); ?>
+						<?php include('step-4.html'); ?>
 					</div>
 				</div>
 			</div>

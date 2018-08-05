@@ -1,19 +1,16 @@
 <?php
 	session_start();
-	require_once('libs/config.inc');
-	require_once('libs/connect.inc');
-	include_once('libs/common-functions.php');
-
-	//------- start connection -------//
-	require_once('libs/start.php');
-	//------- start connection -------//
+	// include_once('libs/common-functions.php');
+	require_once('../libs/connect.php');
 
 	$id = isset($_GET['id'])? $_GET['id'] : 0;
 
 	$cus_first_name = '';
 	$cus_last_name = '';
+	$cus_dob = '';
+	$cus_address = '';
 	$cus_email = '';
-	$cus_department = '';
+	$cus_tel = '';
 	$cus_status = 1;
 	if((int)$id!=0)
 	{
@@ -25,8 +22,10 @@
 		{
 			$cus_first_name = $results['records'][0]->cus_first_name;
 			$cus_last_name = $results['records'][0]->cus_last_name;
+			$cus_dob = $results['records'][0]->cus_dob;
+			$cus_address = $results['records'][0]->cus_address;
 			$cus_email = $results['records'][0]->cus_email;
-			$cus_department = $results['records'][0]->cus_department;
+			$cus_tel = $results['records'][0]->cus_email;
 			$cus_status = $results['records'][0]->cus_status;
 		}
 	}
@@ -36,66 +35,74 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include_once("libs/head.php"); ?>
-		<link rel="stylesheet" href="public/css/validationEngine.jquery.css" />
-		<link rel="stylesheet" href="public/css/breadcrumb.css" />
-		<link rel="stylesheet" href="public/css/master.css" />
-		<link rel="stylesheet" href="public/css/customer-style.css" />
+		<?php include_once("../layout/header-css.php"); ?>
+		<link rel="stylesheet" href="css/form-list.css" />
 		<title><?php echo $mode_text; ?>ข้อมูลลูกค้า</title>
 	</head>
 	<body>
-		<input type="hidden" id="base_url" value="<?php echo HTTP_HOST; ?>" />
+		<input type="hidden" id="base_url" value="<?php echo HTTP_HOST; ?>/crud/customers" />
 		<div class="container">
 			<div class="row">
 				<ul id="breadcrumb">
-					<li><a href="<?php echo HTTP_HOST; ?>">หน้าหลัก</a></li>
-					<li><a onclick="Javascript:void(0);"><?php echo $mode_text; ?>ลูกค้า</a></li>
+					<li><a href="<?php echo HTTP_HOST; ?>/crud/customers"><i class="fa fa-home"></i>&nbsp;หน้าหลัก</a></li>
+					<li><a onclick="Javascript:void(0);"><i class="fa fa-edit"></i>&nbsp;<?php echo $mode_text; ?>ลูกค้า</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"></div>
 			<div class="row">
 				<div class="col-lg-12 col-md-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">
+					<div class="card bg-light mb-3">
+						<div class="card-header">
 							<div class="row">
-								<div class="col-md-9 col-sm-9 pddt7"><?php echo $mode_text; ?>ลูกค้า</div>							
+								<div class="col-md-9 col-sm-9 summ-title"><h6><?php echo $mode_text; ?>ลูกค้า</h6></div>							
 								<div class="col-md-3 col-sm-3 text-right">
-									<a href="<?php echo HTTP_HOST; ?>">
+									<a href="<?php echo HTTP_HOST; ?>/crud/customers">
 										<span class="btn btn-default back-to-main"><i class="fa fa-angle-double-left"></i>&nbsp;กลับหน้ารายการหลัก</span>
 									</a>
 								</div>
 							</div>
 						</div>
-						<div class="panel-body">
+						<div class="card-body">
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12">
-									<form role="form" id="customer_form">
+									<form role="form" class="form-inline" id="customer_form">
 										<input type="hidden" name="mode" value="<?php echo $mode; ?>" />
 										<input type="hidden" name="cus_id" value="<?php echo $id; ?>" />
 										<div class="form-group">
-											<label for="cus_first_name" class="col-md-2 col-sm-2 pddt5 form-label text-right">First name&nbsp;:</label>
-											<div class="col-md-3 col-sm-3">
-												<input type="text" class="validate[required,custom[cus_first_name]] form-control" name="cus_first_name" id="cus_first_name" value="<?php echo $cus_first_name; ?>" maxlength="125" />
+											<label for="cus_first_name" class="col-lg-2 col-md-2 col-sm-2 col-xs-12">ชื่อ&nbsp;:</label>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<input type="text" class="form-control" name="cus_first_name" id="cus_first_name" value="<?php echo $cus_first_name; ?>" maxlength="50" />
 											</div>
-											<label for="cus_last_name" class="col-md-2 col-sm-2  pddt5 form-label text-right">Last name&nbsp;:</label>
-											<div class="col-md-3 col-sm-3 ">
-												<input type="text" class="validate[required,custom[cus_last_name]] form-control" name="cus_last_name" id="cus_last_name" value="<?php echo $cus_last_name; ?>" maxlength="125" />
-											</div>
-										</div>
-										<div class="clearfix"></div>
-										<div class="form-group">
-											<label for="cus_email" class="col-md-2 col-sm-2  pddt5 form-label text-right">Email&nbsp;:</label>
-											<div class="col-md-3 col-sm-3 ">
-												<input type="text" class="validate[required] form-control" name="cus_email" id="cus_email" value="<?php echo $cus_email; ?>" maxlength="100" />
-											</div>
-											<label for="cus_department" class="col-md-2 col-sm-2  pddt5 form-label text-right">Department&nbsp;:</label>
-											<div class="col-md-3 col-sm-3 ">
-												<input class="form-control" name="cus_department" id="cus_department" value="<?php echo $cus_department; ?>" maxlength="100" />
+											<label for="cus_last_name" class="col-lg-2 col-md-2 col-sm-2 form-label">นามสกุล&nbsp;:</label>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<input type="text" class="form-control" name="cus_last_name" id="cus_last_name" value="<?php echo $cus_last_name; ?>" maxlength="50" />
 											</div>
 										</div>
 										<div class="clearfix"></div>
 										<div class="form-group">
-											<label for="cus_status" class="col-md-2 col-sm-2 pddt5 form-label text-right">สถานะการใช้งาน&nbsp;:</label>
+											<label for="cus_dob" class="col-lg-2 col-md-2 col-sm-2 col-xs-12">ว/ด/ป เกิด&nbsp;:</label>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<input type="date" class="form-control" name="cus_dob" id="cus_dob" value="<?php echo $cus_dob; ?>" maxlength="10" />
+											</div>
+											<label for="cus_address" class="col-lg-2 col-md-2 col-sm-2">ที่อยู่&nbsp;:</label>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<input type="text" class="form-control" name="cus_address" id="cus_address" value="<?php echo $cus_address; ?>" maxlength="500" />
+											</div>
+										</div>
+										<div class="clearfix"></div>
+										<div class="form-group">
+											<label for="cus_email" class="col-lg-2 col-md-2 col-sm-2 col-xs-12">อีเมล์&nbsp;:</label>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<input type="text" class="form-control" name="cus_email" id="cus_email" value="<?php echo $cus_email; ?>" maxlength="50" />
+											</div>
+											<label for="cus_tel" class="col-lg-2 col-md-2 col-sm-2">เบอร์โทร&nbsp;:</label>
+											<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+												<input type="text" class="form-control" name="cus_tel" id="cus_tel" value="<?php echo $cus_tel; ?>" maxlength="50" />
+											</div>
+										</div>
+										<div class="clearfix"></div>
+										<div class="form-group">
+											<label for="cus_status" class="col-md-2 col-sm-2 form-label text-right">สถานะการใช้งาน&nbsp;:</label>
 											<div class="col-md-3 col-sm-3">
 												<select class="form-control" name="cus_status" id="cus_status">
 													<option value="1" <?php echo (($cus_status==1)? 'selected' : ''); ?>> ใช้งาน </option>
@@ -103,12 +110,14 @@
 												</select>
 											</div>
 										</div>
-										<p>&nbsp;</p>
 										<div class="clearfix"></div>
-										<div class="col-lg-offset-4 col-lg-8 col-md-offset-4 col-md-8">
+										<div class="form-group">
+											<label class="col-md-2 col-sm-2 form-label text-right"></label>
+											<div class="col-md-3 col-sm-3">
 											<button type="submit" class="btn btn-success"><i class="fa fa-save"></i>&nbsp;บันทึก</button>
-											<a href="<?php echo HTTP_HOST; ?>/master/customer" class="btn btn-danger back-to-main"><i class="fa fa-reply"></i>&nbsp;ยกเลิก</a>
-										</div>										
+											<a href="<?php echo HTTP_HOST; ?>/crud/customers" class="btn btn-danger back-to-main"><i class="fa fa-reply"></i>&nbsp;ยกเลิก</a>
+											</div>
+										</div>							
 									</form>
 								</div>
 							</div>
@@ -122,13 +131,11 @@
 			</div>
 		</div>
 		<?php
-			include_once("libs/script-foot.php");
+			include_once("../layout/footer-script.php");
 			//------- end connection -------//
 			$zr->endConn();
 			//------- end connection -------//
 		?>
-		<script src="<?php echo HTTP_HOST; ?>/public/js/jquery.validationEngine.js"></script>
-		<script src="<?php echo HTTP_HOST; ?>/public/js/customer-validation.js"></script>
-		<script src="<?php echo HTTP_HOST; ?>/public/js/add-edit-customer.js"></script>
+		<script src="js/add-edit-customer.js"></script>
 	</body>
 </html>

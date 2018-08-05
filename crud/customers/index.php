@@ -13,39 +13,33 @@
 <html>
 	<head>
 		<?php include_once("../layout/header-css.php"); ?>
-		<!-- <link rel="stylesheet" href="public/css/master.css" /> -->
-		<!-- <link rel="stylesheet" href="public/css/customer-style.css" />-->
+		<link rel="stylesheet" href="css/form-list.css" />
 		<title>ข้อมูลลูกค้า</title>
 	</head>
 	<body class="crud">
-		<input type="hidden" id="base_url" value="<?php echo HTTP_HOST; ?>" />
+		<input type="hidden" id="base_url" value="<?php echo HTTP_HOST; ?>/crud/customers" />
 		<div class="container">
+			<br>
 			<div class="row">
-				<ul id="breadcrumb">
-					<li><a href="<?php echo HTTP_HOST; ?>"><span class="icon icon-home"></span>หน้าหลัก</a></li>
-					<li><a onclick="Javascript:void(0);"><span class="icon icon-double-angle-right"></span>ข้อมูลลูกค้า</a></li>
-				</ul>
+				<div class="col-lg-12"><h4><i class="fa fa-user"></i>&nbsp;ข้อมูลลูกค้า</h4></div>
 			</div>
-			<div class="clearfix"></div>
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="page-header">ข้อมูลลูกค้า</h1>
-				</div>
-			</div>
+			<br>
 			<div class="row">
 				<div class="col-lg-12 col-md-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">
+					<div class="card">
+						<div class="card-header">
 							<div class="row">
-								<div class="col-md-9 col-sm-9 pddt7">รายการลูกค้าทั้งหมด <?php echo $results['total']; ?> รายการ</div>
+								<div class="col-md-9 col-sm-9 summ-title">
+									<h6>รายการลูกค้าทั้งหมด <?php echo $results['total']; ?> รายการ</h6>
+								</div>
 								<div class="col-md-3 col-sm-3 text-right">
-									<a href="<?php echo HTTP_HOST; ?>/add-edit.php">
-										<span class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;เพิ่มข้อมูล</span>
+									<a href="<?php echo HTTP_HOST; ?>/crud/customers/add-edit.php">
+										<span class="btn btn-success"><i class="fa fa-plus-circle"></i>&nbsp;เพิ่มข้อมูล</span>
 									</a>
 								</div>
 							</div>
 						</div>
-						<div class="panel-body">
+						<div class="card-body">
 							<div class="row">
 								<div class="col-lg-12 col-md-12">
 									<div class="table-responsive">
@@ -132,6 +126,6 @@
 			$zr->endConn();
 			//------- end connection -------//
 		?>
-		<script src="<?php echo HTTP_HOST; ?>/crud/customers/js/customer-list.js"></script>
+		<script src="js/customer-list.js"></script>
 	</body>
 </html>

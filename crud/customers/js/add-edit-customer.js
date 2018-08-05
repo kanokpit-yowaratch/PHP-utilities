@@ -1,10 +1,10 @@
 $(function(){
-	$('#customer_form').validationEngine({promptPosition : "topRight", scroll: false, arrow:true});
-	$('#customer_form').on('submit',(function(e){
-		if($('#customer_form').validationEngine('validate'))
-			submitForm(this);
-		return false;
-	}));
+	// $('#customer_form').validationEngine({promptPosition : "topRight", scroll: false, arrow:true});
+	// $('#customer_form').on('submit',(function(e){
+	// 	if($('#customer_form').validationEngine('validate'))
+	// 		submitForm(this);
+	// 	return false;
+	// }));
 });
 function submitForm(this_form){
 	var formData = new FormData(this_form);

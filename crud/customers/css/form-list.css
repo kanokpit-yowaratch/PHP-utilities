@@ -1,0 +1,72 @@
+.card-header {
+  padding: 0px;
+}
+
+.summ-title {
+  padding-top: 10px;
+  padding-left: 25px;
+}
+
+.toast-bottom-center,
+.toast-bottom-full-width {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.toast-bottom-full-width {
+  width: 70% !important;
+}
+
+.formError .formErrorContent {
+  min-width: 170px;
+  font-size: 0.9em;
+}
+
+.modal-content {
+  border: none;
+}
+
+.modal-dialog.modal-lg {
+  width: 98%;
+}
+
+.modal-header,
+.modal-header .close {
+  color: #FFFFFF;
+}
+
+.modal-header .close {
+  text-shadow: none;
+  opacity: 0.5;
+  font-size: 1.3em;
+}
+
+.modal-header {
+  font-size: 1.5em;
+  background: #006694;
+}
+
+.modal-body {
+  font-size: 1.4em;
+}
+
+.form-inline {
+  padding-top: 10px;
+  padding-bottom: 12px;
+}
+
+.form-inline label {
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 2px;
+  padding-top: 5px;
+}
+
+.btn {
+  cursor: pointer;
+}
