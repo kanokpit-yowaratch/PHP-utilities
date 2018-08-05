@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>PHP Easy CRUD</title>
+  <link href="public/css/bootstrap.min.css" rel="stylesheet">
+  <link href="public/css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+  <section class="first-blood">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 content">
+          <h4>ทำ CRUD ง่ายๆ สไตล์ PHP</h4>
+          <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseOne">
+                  Step 1 :: สร้างโปรเจค (สำหรับใครที่มี resources อยู่แล้ว สามารถข้ามไป Step 2 ได้)
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse in">
+                <ul>
+                  <li>ทำการ install node และ npm ในเครื่องให้เรียบร้อย</li>
+                  <li>ในโฟลเดอร์โปรเจค สร้างไฟล์ package.json สำหรับนำเข้า lib ต่างๆ
+                    <br>
+                    <img src="public/images/01-package.png">
+                  </li>
+                  <li>ข้างในใส่ {}</li>
+                  <li>เปิด cmd และเข้าไปในโปรเจค
+                    <br>
+                    <img src="public/images/02-cmd.png">
+                  </li>
+                  <li>lib ตัวแรกที่จะนำเข้ามาคือ bootstrap ให้เข้าไปที่ website ของ bootstrap เพื่อรัน npm install ตัวล่าสุด
+                  </li>
+                  <li>รันตัวล่าสุด (ซึ่งตอนนี้คือ bootstrap@4.0.0-alpha.6) npm install bootstrap@4.0.0-alpha.6 --save
+                    <br>
+                    <img src="public/images/03-cmd-npm-i-bt.png">
+                  </li>
+                  <li>ในไฟล์ package.json ระบบจะเพิ่ม dependencies ของ bootstrap มาให้ ส่วนใน node_modules เพิ่ม jquery ที่เข้ากับ
+                    bootstrap version นั้นเข้ามาให้ด้วย
+                    <br>
+                    <img src="public/images/04-bootstrap.png">
+                    <br>
+                    <img src="public/images/05-bootstrap-jquery.png">
+                  </li>
+                  <li>copy bootstrap และ jquery จาก node_modules มาใช้ในโปรเจค
+                    <br>
+                    <img src="public/images/06-css.png">
+                    <br>
+                    <img src="public/images/07-js.png">
+                  </li>
+                  <li>ลำดับการ include ของ css และ js
+                    <br>
+                    <img src="public/images/08-link-css.png">
+                    <br>
+                    <img src="public/images/09-src-js.png">
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle btn-block" data-toggle="collapse" href="#collapseTwo">
+                  Step 2 :: สร้างฟังก์ชั่น Connect DB ด้วย PDO
+                </a>
+              </div>
+              <div id="collapseTwo" class="accordion-body collapse show">
+                <ul>
+                  <li>สร้างโฟลเดอร์ libs</li>
+                  <li>ข้างใน libs สร้างไฟล์ขึ้นมา 3 ไฟล์ดังนี้ config.php, pdo.php และ connect.php</li>
+                  <li>config.php ใส่ข้อมูล database
+                      
+                  </li>
+                  <li>pdo.php เขียน class PDO สำหรับเชื่อมต่อข้อมูล
+                      
+                  </li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="public/js/jquery.min.js"></script>
+  <script src="public/js/tether.min.js"></script>
+  <script src="public/js/bootstrap.min.js"></script>
+</body>
+
+</html>

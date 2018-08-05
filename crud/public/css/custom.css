@@ -1,0 +1,63 @@
+body {
+  background-image: url("../images/bg1.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+section.first-blood {
+  margin-top: 50px;
+}
+
+section.first-blood .content {
+  padding: 15px 25px;
+}
+
+ul>li {
+  margin-bottom: 7px;
+  list-style-image: url('../images/list.png');
+}
+
+ul>li img {
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.accordion-group {
+  margin-bottom: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.accordion-group:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+a.accordion-toggle {
+  padding: 5px 15px;
+  color: #098ac0;
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.accordion-group:hover a.accordion-toggle {
+  color: #0271a0;
+  text-decoration: none;
+}
+
+.accordion-body {
+    padding: 5px;
+}
