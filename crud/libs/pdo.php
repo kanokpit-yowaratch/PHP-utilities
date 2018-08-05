@@ -47,7 +47,7 @@
 			}
 
 			unset($query);
-			return ['total'=>$total, 'records'=>$records, 'error_msg'=>$error_msg];
+			return array('total'=>$total, 'records'=>$records, 'error_msg'=>$error_msg);
 		}
 
 		public function dbInsert($sql_string='', $conditions='') {
@@ -75,7 +75,7 @@
 			}
 
 			unset($query);
-			return ['total'=>$total, 'lastInsertId'=>$lastInsertId, 'error_msg'=>$error_msg];
+			return array('total'=>$total, 'lastInsertId'=>$lastInsertId, 'error_msg'=>$error_msg);
 		}
 
 		public function dbupdate($sql_string='', $conditions='') {
@@ -99,7 +99,7 @@
 				$error_msg = $query->errorInfo();
 
 			unset($query);
-			return ['total'=>$total, 'error_msg'=>$error_msg];
+			return array('total'=>$total, 'error_msg'=>$error_msg);
 		}
 
 		public function endConn() {

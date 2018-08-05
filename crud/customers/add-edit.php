@@ -14,7 +14,7 @@
 	$cus_status = 1;
 	if((int)$id!=0)
 	{
-		$conds = [':cus_id'=>$id];
+		$conds = array(':cus_id'=>$id);
 		$sql_string = "SELECT * FROM customers WHERE cus_id=:cus_id LIMIT 1 ";
 		$results = $zr->resultLists($sql_string,$conds,true);
 
