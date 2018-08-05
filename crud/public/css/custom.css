@@ -45,7 +45,7 @@ ul>li img {
 
 a.accordion-toggle {
   padding: 5px 15px;
-  color: #098ac0;
+  color: #333;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
