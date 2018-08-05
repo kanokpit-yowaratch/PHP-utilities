@@ -1,10 +1,10 @@
 <?php
 	class Zero {
-		public $conn		= null;
-		private $host		= HOST;
-		private $user		= USER;
-		private $pw			= PASSWORD;
-		private $db			= DATABASE;
+		public $conn	= null;
+		private $host	= HOST;
+		private $user	= USER;
+		private $pw		= PASSWORD;
+		private $db		= DATABASE;
 
 		public function startConn(){
 			try {
