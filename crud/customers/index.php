@@ -43,14 +43,14 @@
 							<div class="row">
 								<div class="col-lg-12 col-md-12">
 									<div class="table-responsive">
-										<table class="table table-striped table-condensed table-bordered table-hover">
+										<table class="table table-striped">
 											<thead>
 												<tr>
 													<th class="text-center">Item</th>
 													<th class="text-center">Name</th>
 													<th class="text-center">Status</th>
 													<th class="text-center">Email</th>
-													<th class="text-center">Department</th>
+													<th class="text-center">Tel</th>
 													<th class="text-center">Manage</th>
 												</tr>
 											</thead>
@@ -62,16 +62,18 @@
 															$full_name = trim($val->cus_first_name .' '. $val->cus_last_name);
 															$stt_class = ($val->cus_status==1)? 'danger' : 'primary';
 															$stt_icon = ($val->cus_status==1)? 'close' : 'refresh';
-															$stt_txt = ($val->cus_status==1)? '<label class="label label-success">ใช้งาน</label>' : '<label class="label label-danger">ไม่ใช้งาน</label>';
+															$lss = '<div class="progress"><div class="progress-bar progress-bar-striped bg-success">ใช้งาน</div></div>';
+															$ldg = '<div class="progress"><div class="progress-bar progress-bar-striped bg-danger">ไม่ใช้งาน</div></div>';
+															$stt_txt = ($val->cus_status==1)? $lss : $ldg;
 												?>
 															<tr>
 																<td class="text-center"><?php echo ($k+1); ?></td>
 																<td class="text-center"><?php echo $full_name; ?></td>
 																<td class="text-center"><?php echo $stt_txt; ?></td>
 																<td class="text-center"><?php echo $val->cus_email; ?></td>
-																<td class="text-center"><?php echo $val->cus_department; ?></td>
+																<td class="text-center"><?php echo $val->cus_tel; ?></td>
 																<td class="text-center">
-																	<a class="btn btn-warning" href="add-edit.php?id=<?php echo $val->cus_id; ?>"><i class="fa fa-pencil"></i>&nbsp;</a>
+																	<a class="btn btn-sm btn-warning" href="add-edit.php?id=<?php echo $val->cus_id; ?>"><i class="fa fa-pencil"></i>&nbsp;</a>
 																	<button type="button" class="btn btn-sm btn-<?php echo $stt_class; ?> btn-del" id="delete_<?php echo $val->cus_id; ?>_<?php echo $val->cus_status; ?>" data-toggle="modal" data-target="#delete_modal"><i class="fa fa-<?php echo $stt_icon; ?>"></i>&nbsp;</button>
 																</td>
 															</tr>

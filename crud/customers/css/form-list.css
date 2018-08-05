@@ -70,3 +70,16 @@
 .btn {
   cursor: pointer;
 }
+
+.table {
+  margin-bottom: 0px;
+}
+
+.table td, .table th {
+  padding: 0px 10px;
+  vertical-align: middle;
+}
+
+.table td .progress-bar {
+  width: 100%;
+}
