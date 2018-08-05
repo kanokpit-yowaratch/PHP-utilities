@@ -6,7 +6,7 @@
 		private $pw		= PASSWORD;
 		private $db		= DATABASE;
 
-		public function startConn(){
+		public function startConn() {
 			try {
 				$this->conn = new PDO("mysql:host=". $this->host .";dbname=". $this->db, $this->user, $this->pw);
 				return $this->conn;
@@ -15,7 +15,7 @@
 			}
 		}
 
-		public function resultLists($sql_string='', $conditions='', $return_object=true){
+		public function resultLists($sql_string='', $conditions='', $return_object=true) {
 			$total = 0;
 			$records = array();
 			$error_msg = '';
@@ -50,7 +50,7 @@
 			return ['total'=>$total, 'records'=>$records, 'error_msg'=>$error_msg];
 		}
 
-		public function dbInsert($sql_string='', $conditions=''){
+		public function dbInsert($sql_string='', $conditions='') {
 			$error_msg = '';
 			$lastInsertId = 0;
 			$result = null;
@@ -77,7 +77,8 @@
 			unset($query);
 			return ['total'=>$total, 'lastInsertId'=>$lastInsertId, 'error_msg'=>$error_msg];
 		}
-		public function dbupdate($sql_string='', $conditions=''){
+
+		public function dbupdate($sql_string='', $conditions='') {
 			$error_msg = '';
 			$result = null;
 
@@ -100,8 +101,8 @@
 			unset($query);
 			return ['total'=>$total, 'error_msg'=>$error_msg];
 		}
-		public function endConn()
-		{
+
+		public function endConn() {
 			if($this->conn != null)
 			{
 				$this->conn = null;
